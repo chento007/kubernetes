@@ -11,10 +11,5 @@ pipeline {
                 sh "mvn clean package"
             }
         }
-        stage("build image") {
-            steps {
-                // Add your build image steps here
-            }
-        }
     }
 }
