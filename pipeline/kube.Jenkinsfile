@@ -11,5 +11,12 @@ pipeline {
                 sh "mvn clean package"
             }
         }
+
+        stage("Build") {
+            steps {
+                sh "docker build -t chento/kube-register:1.1.1 ."
+            }
+        }
+        
     }
 }
