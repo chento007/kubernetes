@@ -1,18 +1,19 @@
-pipeline{
-    agent { label 'main'}
+pipeline {
+    agent { label 'main' }
 
-    tools{
+    tools {
         maven "3.6.3"
     }
 
-    stages{
-        stage("build image"){
-
-            stage("clean package"){
-                sh "mvn clean package"
+    stages {
+        stage("build image") {
+            steps {
+                stage("clean package") {
+                    steps {
+                        sh "mvn clean package"
+                    }
+                }
             }
-
         }
     }
-
 }
