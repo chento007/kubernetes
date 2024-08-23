@@ -78,9 +78,7 @@ public class BrandController {
 	@GetMapping("{id}/models")
 	public ResponseEntity<?> getModelsByBrand(@PathVariable("id") Long brandId){
 		List<Model> brands = modelService.getByBrand(brandId);
-		List<ModelDTO> list = brands.stream()
-			.map(modelMapper::toModelDTO)
-			.toList();
+		List<ModelDTO> list = null;
 		return ResponseEntity.ok(list);
 	}
 	

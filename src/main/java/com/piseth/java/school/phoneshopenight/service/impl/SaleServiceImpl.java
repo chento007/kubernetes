@@ -36,7 +36,7 @@ public class SaleServiceImpl implements SaleService{
 		
 		List<Long> productIds = saleDTO.getProducts().stream()
 				.map(ProductSoldDTO::getProductId)
-				.toList();
+				.collect(Collectors.toList());
 			// validate product
 		productIds.forEach(productService::getById);
 		
@@ -109,7 +109,7 @@ public class SaleServiceImpl implements SaleService{
 		
 		List<Long> productIds = saleDTO.getProducts().stream()
 			.map(ProductSoldDTO::getProductId)
-			.toList();
+			.collect(Collectors.toList());
 		// validate product
 		productIds.forEach(productService::getById);
 		
@@ -145,7 +145,7 @@ public class SaleServiceImpl implements SaleService{
 		
 		List<Long> productIds = saleDetails.stream()
 			.map(sd -> sd.getProduct().getId())
-			.toList();
+			.collect(Collectors.toList());
 		
 		List<Product> products = productRepository.findAllById(productIds);
 		Map<Long, Product> productMap = products.stream()

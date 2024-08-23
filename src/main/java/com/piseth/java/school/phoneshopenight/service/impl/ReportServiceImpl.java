@@ -57,7 +57,7 @@ public class ReportServiceImpl implements ReportService{
 		
 		List<Long> productIds = saleDetails.stream()
 			.map(sd -> sd.getProduct().getId())
-			.toList();
+			.collect(Collectors.toList());
 		Map<Long, Product> productMap = productRepository.findAllById(productIds).stream()
 			.collect(Collectors.toMap(Product::getId, Function.identity()));
 		

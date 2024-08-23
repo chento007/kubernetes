@@ -1,6 +1,7 @@
 package com.piseth.java.school.phoneshopenight.utils;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class GeneralUtils {
 	
@@ -11,13 +12,13 @@ public class GeneralUtils {
 	public static List<Integer> toIntegerList(List<String> list){
 		return list.stream()
 			.map(s -> s.length())
-			.toList();
+			.collect(Collectors.toList());
 	}
 	
 	public static List<Integer> getEvenNumber(List<Integer> list){
 		return list.stream()
 			.filter(x -> x%2 == 0)
-			.toList();
+			.collect(Collectors.toList());
 	}
 
 }
