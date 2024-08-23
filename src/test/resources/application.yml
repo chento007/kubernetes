@@ -1,11 +1,11 @@
 spring:
   datasource:
-   url: jdbc:h2:mem:testdb
-   username: sa
-   password: 
+    url: jdbc:postgresql://34.128.78.114:5432/postgres
+    username: postgres
+    password: 123
   jpa:
-   properties:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
-    dialect: org.hibernate.dialect.H2Dialect
-   hibernate:
-    ddl-auto: create
+      ddl-auto: update
