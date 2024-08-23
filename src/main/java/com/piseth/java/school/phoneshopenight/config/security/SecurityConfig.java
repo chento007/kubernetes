@@ -46,7 +46,7 @@ public class SecurityConfig {
 			.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 			.and()
 			.authorizeHttpRequests()
-			.antMatchers("/","index.html","css/**","js/**").permitAll()
+			.antMatchers("/","index.html","css/**","js/**", "/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html").permitAll()
 			.antMatchers(HttpMethod.PUT, "/brands/**").hasAuthority(PermissionEnum.BRAND_WRITE.getDescription())
 			//.antMatchers(HttpMethod.PUT, "/brands/**").has(PermissionEnum.BRAND_WRITE.getDescription())
 			.anyRequest()
