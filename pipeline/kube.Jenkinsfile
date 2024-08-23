@@ -14,7 +14,7 @@ pipeline {
 
         stage("Build") {
             steps {
-                sh "docker build -t chento/kube-register:1.1.1 ."
+                sh "docker build -t chentochea/kube-register:1.1.1 ."
             }
         }
 
