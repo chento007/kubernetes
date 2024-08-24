@@ -26,5 +26,13 @@ pipeline {
                 }
             }
         }
+
+        stage("Deploy Service") {
+            steps {
+                sh """
+                    ansible-playbook -i ansible/inventory node1 ansible/deploy.yaml
+                """
+            }
+        }
     }
 }
