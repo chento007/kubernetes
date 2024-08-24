@@ -30,7 +30,9 @@ pipeline {
         stage("Deploy Service") {
             steps {
                 sh """
-                    ansible-playbook -i ansible/inventory ansible/deploy.yaml
+                    ansible-playbook ansible/deploy.yml \
+                    -i ansible/inventory \
+                    -e workspace=$WORKSPACE
                 """
             }
         }
