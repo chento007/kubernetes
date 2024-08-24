@@ -31,6 +31,7 @@ pipeline {
         stage("Deploy Service") {
             steps {
                 sh "pwd"
+                sh "ls"
                 sh """
                     ansible-playbook ansible/deploy.yml \
                     -i ansible/inventory \
