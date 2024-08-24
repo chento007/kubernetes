@@ -1,12 +1,13 @@
 - name: Deploy Playbook
-  host: node1
+  hosts: node1
   become: true
   vars:
-    ansible_ssh_common_args: '-o StrictHostKeyChcking=no'
-  task:
+    ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
+  tasks:
     - name: Copy file
       copy:
         src: kubernetes/deploy.sh
         dest: /opt/deploy.sh
+
     - name: Run Shell Script
       command: bash /opt/deploy.sh
