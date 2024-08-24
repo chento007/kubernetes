@@ -6,8 +6,9 @@
   tasks:
     - name: Copy file
       copy:
-        src: kubernetes/deploy.sh
+        src: /path/to/kubernetes/deploy.sh  # Correct the path if needed
         dest: /opt/deploy.sh
+        remote_src: true  # Indicates the file is on the remote machine
 
     - name: Run Shell Script
       command: bash /opt/deploy.sh
