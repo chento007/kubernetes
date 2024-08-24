@@ -1,6 +1,8 @@
 - name: Deploy Playbook
   host: node1
   become: true
+  vars:
+    ansible_ssh_common_args: '-o StrictHostKeyChcking=no'
   task:
     - name: Copy file
       copy:
