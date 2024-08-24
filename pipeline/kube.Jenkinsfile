@@ -28,9 +28,9 @@ pipeline {
             }
         }
 
-        stage("Verify Playbook Path") {
+        stage("Verify Script Path") {
             steps {
-                sh "ls -l $WORKSPACE/ansible"
+                sh "ls -l $WORKSPACE/kubernetes"
             }
         }
 
